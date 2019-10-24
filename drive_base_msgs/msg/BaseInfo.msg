@@ -4,8 +4,28 @@ uint8 POWER_SUPPLY_STATUS_DISCHARGING = 2
 uint8 POWER_SUPPLY_STATUS_NOT_CHARGING = 3
 uint8 POWER_SUPPLY_STATUS_FULL = 4
 
-std_msgs/Header header
-uint32 hw_id                # a, hopefully unique, id
-uint32 hw_timestamp         # timestamp as returned by the hardware
-int32[] wheel_encoders      # current encoder values, one per wheel
-float32 battery_voltage     # current battery voltage
+# identifying information
+uint32 hw_id                  # a, hopefully unique, id
+uint32 hw_timestamp           # timestamp as returned by the hardware
+builtin_interfaces/Time stamp # wall clock timestamp
+
+# position information (estimated, relative to starting pose)
+float32 x
+float32 y
+float32 orientation
+# should we add z?
+
+# velocity information
+float32 forward_velocity
+float32 rotational_velocity
+
+# battery state
+uint8 battery_voltage_pct     # range: 0-100. current battery voltage as percent of nominal.
+uint8 power_supply            # one of the constants above
+
+# diagnostic information
+bool overcurrent              # motor overcurrent detected
+bool blocked                  # True if forward direction is blocked by an obstacle
+bool in_collision             # True if the robot is in collision (usually detected via bumper)
+bool at_cliff                 # True if the robot has detected a cliff in the forward direction
+
