@@ -22,7 +22,10 @@ find_package(builtin_interfaces REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 set(msg_files
+  "msg/CommandHeader.msg"
   "msg/BaseInfo.msg"
+  "msg/CommandStatus.msg"
+  "msg/TRVCommand.msg"
 )
 rosidl_generate_interfaces(${PROJECT_NAME}
   ${msg_files}
