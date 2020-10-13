@@ -1,4 +1,4 @@
-# This is the official list of fmi_adapter_ros2 copyright holders and authors.
+# This is the official list of drive_base copyright holders and authors.
 #
 # Often employers or academic institutions have ownership over code that is
 # written in certain circumstances, so please do due diligence to ensure that
@@ -21,4 +21,5 @@
 # Please keep the list sorted.
 
 Robert Bosch GmbH
+    Ingo Luetkebohle <ingo.luetkebohle@de.bosch.com>
     Ralph Lange <ralph.lange@de.bosch.com>
